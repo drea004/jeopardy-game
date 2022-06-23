@@ -16,9 +16,7 @@ export class WelcomeComponent implements OnInit {
   constructor(private Http: HttpClient,private service: ApiService, private router: Router) { }
 
   ngOnInit(): void {
-    // this.service.getClue().subscribe((result: Clue) => {
-    //   this.clue = result; 
-    // }); //calling from ApiService
+   
   }
 
   newGame(){
