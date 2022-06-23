@@ -1,24 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-<div class="container" *ngFor="let x of clue">
+
+<div class="container" >
     <div class="row">
-        <div class="col-4">
-    {{x.category?.title}}
+        <div class="col-2">
+          {{clue[0].category?.title}}
+          <br>
+          <div>
+            {{clue[0].question}}
+            <!-- {{getClueByCategory(clue[0].category?.title)}} -->
+                
+          </div>
+           
         </div>
+        <div class="col-2">
+          {{clue[1].category?.title}}
+        </div>
+        <div class="col-2">
+          {{clue[2].category?.title}}
+        </div>
+        <div class="col-2">
+          {{clue[3].category?.title}}
+        </div>
+        <div class="col-2">
+          {{clue[4].category?.title}}
+        </div>
+        <div class="col-2">
+          {{clue[5].category?.title}}
+        </div>
+        <div class="col-2">
+          {{clue[6].category?.title}}
+        </div>     
     </div>   
 </div>
-
-<div class="container">
-    <div class="row">
-      <div class="col-4">
-        One of three columns
-      </div>
-      <div class="col-4">
-        One of three columns
-      </div>
-      <div class="col-4">
-        One of three columns
-      </div>
-    </div>
-  </div>
-
 

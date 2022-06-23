@@ -17,6 +17,7 @@ export class GameComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategories(); 
+    // this.getClueByCategory("baseball"); 
   }
 
   getCategories(){
@@ -29,6 +30,16 @@ export class GameComponent implements OnInit {
          
       }
     }); 
+  }
+
+  getClueByCategory(category?: string){
+    return this.Http.get<any>(this.jeopardyURL+"jeopardy/Category?request="+category)
+    .subscribe({
+      next: (res) => {
+        console.log("RESULTS",res); 
+      }
+    }); 
+    
   }
 
 }
