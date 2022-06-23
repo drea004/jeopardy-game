@@ -17,8 +17,7 @@ export class GameComponent implements OnInit {
   constructor(private Http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getCategories(); 
-    //this.getClueByCategory("baseball"); 
+    this.getCategories();  
   }
 
   getCategories(){
@@ -29,7 +28,7 @@ export class GameComponent implements OnInit {
           this.categories.push(element.category?.title!); 
           this.getClueByCategory(element.category?.title!).subscribe(clues => {
             this.clues.push(clues); 
-            console.log(this.clues); 
+            console.log("clues array",this.clues); 
           });
            
         })

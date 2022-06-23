@@ -1,48 +1,43 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="#">Menu</a>
+      </li>
+      <li class="nav-item">
+        <a>Player 1</a>
+      </li>
+      <li class="nav-item">
+        <a >Player 2</a>
+      </li>
+      <li class="nav-item">
+        <a>Player 3</a>
       </li>
     </ul>
   </div>
 </nav>
 
-
-<div class="container" *ngIf="clues.length>0" >
-    <div class="row">
-        <div class="col-2">
-          {{categories[0]}}
-          <br>
-          <!-- <div *ngFor="let x of clues">
-            
-            <div *ngFor="let ">
-              {{xquestion}}
+<div class="container" *ngIf="clues.length>0">
+  <div class="row" >
+    <div class="col-2 text-center" *ngFor="let column of clues">
+      <div class="category">
+        {{column[0].category?.title}}
+      </div>  
+      
+      <br>
+      <div *ngFor="let x of column">
+        <div class="card text-white bg-primary mb-3 card border-danger mb-3" style="max-width: 15rem;">
+          <div class="card-header"></div>
+            <div class="card-body">
+              <h5 class="card-title">{{x.value}}</h5>
+              <p class="card-text"> {{x.answer}} </p>
+              
             </div>
-          </div> -->
         </div>
-        <br>
-        <div class="col-2">
-          {{categories[1]}}
-          {{clues[1][0].question}}
-          
-        </div>
-        <div class="col-2">
-          {{categories[2]}}
-        </div>
-        <div class="col-2">
-          {{categories[3]}}
-        </div>
-        <div class="col-2">
-          {{categories[4]}}
-        </div>
-        <div class="col-2">
-          {{categories[5]}}
-        </div>
-            
-    </div>   
+      </div>
+    </div>
+  </div>
 </div>
-
