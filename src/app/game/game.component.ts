@@ -13,10 +13,10 @@ export class GameComponent implements OnInit {
   jeopardyURL = 'http://localhost:5018/'; //running API
   clues: Array<Array<Clue>> = [];
   categories: Array<string> = [];
-  div1:boolean=true;
-  div2:boolean=true;
-  div3:boolean=true;
+  element = false;
   isShow = false;
+  pointCounter = 0; 
+
   constructor(private Http: HttpClient) { }
 
   ngOnInit(): void {
@@ -57,24 +57,17 @@ export class GameComponent implements OnInit {
     
   }
 
-  div1Function(){
-      this.div1=true;
-      this.div2=false;
-      this.div3=false
+  showData() {
+    return (this.element = true);
+  }
+  hideData() {
+    return (this.element = false);
   }
 
-  div2Function(){
-      this.div2=true;
-      this.div1=false;
-      this.div3=false
+  addPoints(){
+    return this.pointCounter+=100; 
   }
-
-  
- 
-  toggleDisplay() {
-    this.isShow = !this.isShow;
+  removePoints(){
+    return this.pointCounter-=100;
   }
-
-
-
 }

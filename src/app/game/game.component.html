@@ -10,14 +10,27 @@
         <a class="nav-link" href="#">Menu</a>
       </li>
       <li class="nav-item">
-        <a>Player 1</a>
+        <a>Player 1 
+          <br>
+          Points: {{pointCounter}}
+          
+
+          <div>
+            <button style="color: green" (click)="(addPoints())">
+              +
+            </button>
+            <button style="color: rgb(243, 7, 7)" (click)="(removePoints())">
+              -
+            </button>
+          </div>
+        </a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a >Player 2</a>
       </li>
       <li class="nav-item">
         <a>Player 3</a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </nav>
@@ -29,21 +42,24 @@
       <div class="category">
         {{column[0].category?.title}}
       </div>  
+  
       
       <br>
       <div class="text-center"*ngFor="let x of column">
         <div class="flip-card text-center">
+
           <div class="flip-card-inner">
             <div class="flip-card-front">
               {{x.value}}
             </div>
             <div class="flip-card-back"> 
               {{x.question}}
-              <div *ngIf="!div1">
-                {{x.answer}}    
+              <div *ngIf="element == true">
+    
+                {{x.answer}}
               </div>
-              <button (click)="div2Function()"> Show Answer</button>
-              <button (click)="div1Function()"> Hide Answer</button> 
+              <button (click)="showData()">Show Answer</button>
+              <button (click)="hideData()">Hide Answer</button>
               <br> 
             </div>
 
@@ -65,14 +81,7 @@
   </div>
 </div>
 
-<!-- <div>
-  <title>Element toggle in angular</title>
-   <body>
-      <div *ngIf = “!isShow”>This is a div which toggles.</div>
-      <button (click) = toggleDisplay()>Toggle</button>
-</body>
-
-</div> -->
-
-
+<div>
+  
+  
 
