@@ -19,12 +19,14 @@ export class GameComponent implements OnInit {
     this.getCategories(); 
   }
 
+
   getCategories(){
     return this.Http.get<any>(this.jeopardyURL+"jeopardy/CategoryList")
     .subscribe({
       next: (res: Array<Clue>) => {
         res.forEach(element => {
-          this.clue.push(element); 
+          this.clue.push(element);
+          this.clue.push(element);
         })
          
       }
