@@ -1,3 +1,5 @@
+
+<!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -19,6 +21,7 @@
     </ul>
   </div>
 </nav>
+<!-- navbar end -->
 
 <div class="container" *ngIf="clues.length>0">
   <div class="row" >
@@ -28,16 +31,45 @@
       </div>  
       
       <br>
-      <div *ngFor="let x of column">
-        <div class="card text-white bg-primary mb-3 card border-danger mb-3" style="max-width: 15rem;">
+      <div class="text-center"*ngFor="let x of column">
+        <div class="flip-card text-center">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              {{x.value}}
+            </div>
+            <div class="flip-card-back"> 
+              {{x.question}}
+              <div *ngIf="div1">
+                {{x.answer}}    
+              </div>
+              <!-- shows ABC text -->
+              <button (click)="div1Function()"> Show Answer</button> 
+              <br>
+              <!-- hides ABC text -->
+              <button (click)="div2Function()"> Hide Answer</button>
+              
+              
+            </div>
+
+          </div>
+        </div>
+        <!-- <br> -->
+
+        <!-- <div class="card text-white bg-primary mb-3" style="max-width: 15rem;" (click)="revealQuestion()">
           <div class="card-header"></div>
             <div class="card-body">
               <h5 class="card-title">{{x.value}}</h5>
               <p class="card-text"> {{x.answer}} </p>
               
             </div>
-        </div>
+        </div> -->
       </div>
     </div>
+  
   </div>
 </div>
+
+
+
+
+

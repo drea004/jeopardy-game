@@ -13,7 +13,9 @@ export class GameComponent implements OnInit {
   jeopardyURL = 'http://localhost:5018/'; //running API
   clues: Array<Array<Clue>> = [];
   categories: Array<string> = [];
-
+  div1:boolean=true;
+  div2:boolean=true;
+  div3:boolean=true;
   constructor(private Http: HttpClient) { }
 
   ngOnInit(): void {
@@ -39,8 +41,38 @@ export class GameComponent implements OnInit {
 
   getClueByCategory(category?: string){
     return this.Http.get<any>(this.jeopardyURL+"jeopardy/Category?request="+category);
-     
+  }
+
+  getAnswerByQuestion(){
+
+
+  }
+
+  revealAnswer(clue: Array<Clue>){
+    console.log("clicked"); 
+    clue.forEach(element => {
+      console.log(element.answer)
+    }); 
     
   }
+
+  div1Function(){
+      this.div1=true;
+      this.div2=false;
+      this.div3=false
+  }
+
+  div2Function(){
+      this.div2=true;
+      this.div1=false;
+      this.div3=false
+  }
+
+  div3Function(){
+      this.div3=true;
+      this.div2=false;
+      this.div1=false
+  }
+
 
 }
