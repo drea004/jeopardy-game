@@ -1,6 +1,5 @@
-
 <!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,17 +9,16 @@
         <a class="nav-link" href="#">Menu</a>
       </li>
       <li class="nav-item">
-        <a>Player 1 
+        <a style="color:white">Player 1 
           <br>
           Points: {{pointCounter}}
-          
-
           <div>
-            <button style="color: green" (click)="(addPoints())">
-              +
-            </button>
             <button style="color: rgb(243, 7, 7)" (click)="(removePoints())">
               -
+            </button>
+
+            <button style="color: green" (click)="(addPoints())">
+              +
             </button>
           </div>
         </a>
@@ -36,14 +34,12 @@
 </nav>
 <!-- navbar end -->
 
-<div class="container" *ngIf="clues.length>0">
+<div class="container-fluid" *ngIf="clues.length>0">
   <div class="row" >
-    <div class="col-2 text-center" *ngFor="let column of clues">
+    <div class="col-md-2 col-sm-4 col-xs-6 text-center" *ngFor="let column of clues">
       <div class="category">
         {{column[0].category?.title}}
       </div>  
-  
-      
       <br>
       <div class="text-center"*ngFor="let x of column">
         <div class="flip-card text-center">
