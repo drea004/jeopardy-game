@@ -39,16 +39,12 @@
             </div>
             <div class="flip-card-back"> 
               {{x.question}}
-              <div *ngIf="div1">
+              <div *ngIf="!div1">
                 {{x.answer}}    
               </div>
-              <!-- shows ABC text -->
-              <button (click)="div1Function()"> Show Answer</button> 
-              <br>
-              <!-- hides ABC text -->
-              <button (click)="div2Function()"> Hide Answer</button>
-              
-              
+              <button (click)="div2Function()"> Show Answer</button>
+              <button (click)="div1Function()"> Hide Answer</button> 
+              <br> 
             </div>
 
           </div>
@@ -69,7 +65,14 @@
   </div>
 </div>
 
+<!-- <div>
+  <title>Element toggle in angular</title>
+   <body>
+      <div *ngIf = “!isShow”>This is a div which toggles.</div>
+      <button (click) = toggleDisplay()>Toggle</button>
+</body>
 
+</div> -->
 
 
 

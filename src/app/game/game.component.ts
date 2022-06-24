@@ -16,6 +16,7 @@ export class GameComponent implements OnInit {
   div1:boolean=true;
   div2:boolean=true;
   div3:boolean=true;
+  isShow = false;
   constructor(private Http: HttpClient) { }
 
   ngOnInit(): void {
@@ -68,11 +69,12 @@ export class GameComponent implements OnInit {
       this.div3=false
   }
 
-  div3Function(){
-      this.div3=true;
-      this.div2=false;
-      this.div1=false
+  
+ 
+  toggleDisplay() {
+    this.isShow = !this.isShow;
   }
+
 
 
 }
