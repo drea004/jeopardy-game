@@ -1,25 +1,84 @@
-<div>
-<div class="container" *ngFor="let x of clue">
-    <div class="row">
-        <div class="col-4">
-    {{x.category?.title}}
-        </div>
-    </div>   
-</div>
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Menu</a>
+      </li>
+      <li class="nav-item">
+        <a style="color:white">Player 1 
+          <br>
+          Points: {{pointCounter}}
+          <div>
+            <button style="color: rgb(243, 7, 7)" (click)="(removePoints())">
+              -
+            </button>
 
-<div class="container">
-    <div class="row">
-      <div class="col-4">
-        One of three columns
-      </div>
-      <div class="col-4">
-        One of three columns
-      </div>
-      <div class="col-4">
-        One of three columns
+            <button style="color: green" (click)="(addPoints())">
+              +
+            </button>
+          </div>
+        </a>
+      </li>
+      <!-- <li class="nav-item">
+        <a >Player 2</a>
+      </li>
+      <li class="nav-item">
+        <a>Player 3</a>
+      </li> -->
+    </ul>
+  </div>
+</nav>
+<!-- navbar end -->
+
+<div class="container-fluid" *ngIf="clues.length>0">
+  <div class="row" >
+    <div class="col-md-2 col-sm-4 col-xs-6 text-center" *ngFor="let column of clues">
+      <div class="category">
+        {{column[0].category?.title}}
+      </div>  
+      <br>
+      <div class="text-center"*ngFor="let x of column">
+        <div class="flip-card text-center">
+
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              {{x.value}}
+            </div>
+            <div class="flip-card-back"> 
+              {{x.question}}
+              <div *ngIf="element == true">
+    
+                {{x.answer}}
+              </div>
+              <button (click)="showData()">Show Answer</button>
+              <button (click)="hideData()">Hide Answer</button>
+              <br> 
+            </div>
+
+          </div>
+        </div>
+        <!-- <br> -->
+
+        <!-- <div class="card text-white bg-primary mb-3" style="max-width: 15rem;" (click)="revealQuestion()">
+          <div class="card-header"></div>
+            <div class="card-body">
+              <h5 class="card-title">{{x.value}}</h5>
+              <p class="card-text"> {{x.answer}} </p>
+              
+            </div>
+        </div> -->
       </div>
     </div>
+  
   </div>
+</div>
 
+<div>
+  
+  
 
 </div>

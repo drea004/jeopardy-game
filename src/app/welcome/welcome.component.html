@@ -1,37 +1,41 @@
-<img src="https://html.sammy-codes.com/images/small-profile.jpeg" style="height:150px; border-radius: 50%; border: 10px solid #FEDE00; padding-top:80px;">
-<h1 class="welcome text-center">Welcome to Jeopardy! </h1>
+<div class="container background">
+    <div class="row">
+        <!-- <img src="https://html.sammy-codes.com/images/small-profile.jpeg" style="height:150px; border-radius: 50%; border: 10px solid #FEDE00; padding-top:80px;"> -->
 
-<!-- player dropdown -->
-<select class="dropdown" (change)="saveSelected($event.target)"> 
-    <option value="default">Select Number of Players</option>
-    <option >1 Players</option>
-    <option>2 Players</option>
-    <option>3 Players</option>
-    <option>4 Players</option>
-    <option>5 Players</option>
-</select>
+<div class="container">
+    <div class="row">
+        <h1 class="welcome text-center">Welcome to Jeopardy! </h1>
+    </div>
+</div>
 
-<button type="button" class="btn btn-warning" (click)="newGame()">
-    Start     
-</button>
-<!-- input box for post
-<div class="row">
+<div class="container">
+    <div class="row">
+        <!-- player dropdown -->
+        <div class="col-2"></div>
+       
+        <div class="col-10 text-center">
+            <select class="dropdown" (change)="saveSelected($event.target)"> 
+                <option value="default">Select Number of Players</option>
+                <option>1 Player</option>
+                <option>2 Players</option>
+                <option>3 Players</option>
+                <option>4 Players</option>
+                <option>5 Players</option>
+            </select>
+            <br>
+            <button type="button" class=" btn btn-success" (click)="newGame()">
+                Start     
+            </button>
+        </div>
+        
+    </div>
+</div>
+</div>
     
-   <div class="col-4 text-center">
-    <input type="text"  [(ngModel)]="clue.Answer">
-    <input type="text"  [(ngModel)]="clue.Question">
-    <input type="text"  [(ngModel)]="clue.Value">
-    <input type="text"  [(ngModel)]="clue.Category">
-    <input type="text"  [(ngModel)]="clue.Airdate">
-    <input type="text"  [(ngModel)]="clue.Id">
-    
-   </div> 
-  
 
-</div> -->
+</div>
 
 
-<!-- <button>
-   Continue
-</button> -->
 
+
+   
